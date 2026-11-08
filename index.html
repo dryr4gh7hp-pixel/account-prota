@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #101a35;
+            color: white;
+            text-align: center;
+            padding: 50px 15px;
+        }
+
+        .login-box {
+            background: #1c2a4b;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 350px;
+            margin: auto;
+        }
+
+        input {
+            display: block;
+            width: 90%;
+            padding: 12px;
+            margin: 15px auto;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #7c9cff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #result {
+            display: none;
+            margin-top: 25px;
+            color: #ff8585;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-box" id="login">
+
+    <h2>تسجيل الدخول</h2>
+
+    <p>أدخل اسمك للمتابعة</p>
+
+    <input id="name" type="text"
+           placeholder="اسم العرض">
+
+    <button onclick="login()">تسجيل الدخول</button>
+
+</div>
+
+<div id="result">
+    <h1>🚨 هكرتك!</h1>
+    <h3 id="welcome"></h3>
+    <p>
+        هذي المره مقلبتك المره الجاية لازم تنتبه عشان لا تتهكر منجد
+    </p>
+</div>
+
+<script>
+function login() {
+
+    let name = document.getElementById("name").value;
+
+    if (name.trim() === "") {
+        alert("اكتب اسمًا تجريبيًا أولًا");
+        return;
+    }
+
+    document.getElementById("login").style.display = "none";
+
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("welcome").innerText =
+        "هاي " + name;
+}
+</script>
+
+</body>
+</html>
